@@ -74,4 +74,4 @@ flowchart LR
 
 ## 代码授权
 
-本仓库原创接口代码采用 [MIT License](LICENSE)，允许卢萌团队下载、修改、私有部署、再分发和商用，需保留许可声明。第三方依赖保留其各自许可证。**MIT 不授予 DigitalBrain 数据、论文、模型、专利或商标的任何权利。** 数据范围和再分发权限由各权利人决定，详见 [交接说明](docs/HANDOFF.zh-CN.md)。
+本仓库原创接口代码采用 [MIT License](LICENSE)，允许卢萌团队下载、修改、私有部署、再分发和商用，需保留许可声明。第三方依赖和生成的运行时类型保留其各自许可证，见 [第三方声明](THIRD_PARTY_NOTICES.md)。**MIT 不授予 DigitalBrain 数据、论文、模型、专利或商标的任何权利。** 数据范围和再分发权限由各权利人决定，详见 [交接说明](docs/HANDOFF.zh-CN.md)。
