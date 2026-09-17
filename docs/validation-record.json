@@ -240,5 +240,21 @@
   "raw_data_published": false,
   "full_atlas_validated": false,
   "model_weights_tested": false,
-  "hundred_user_load_tested": false
+  "hundred_user_load_tested": false,
+  "ci": {
+    "url": "https://github.com/duanyu119/digitalbrain-mcp-kit/actions/runs/35232002069",
+    "conclusion": "success",
+    "code_commit": "0d0ae85a03dcf0cb6fa650c2482888524297cb8e",
+    "environment": "ubuntu-latest / Node 22.22.0 / Docker / local workerd",
+    "real_website_data_used_in_ci": false
+  },
+  "dependency_audit": {
+    "scope": "npm production dependencies",
+    "known_vulnerabilities": 0,
+    "checked_at": "2026-09-17"
+  },
+  "independent_model_review": {
+    "status": "unavailable",
+    "reason": "Two requests timed out; no independent conclusion obtained."
+  }
 }
