@@ -1,0 +1,12 @@
+node_modules/
+.local-data/
+artifacts/
+.wrangler/
+gateway/.wrangler/
+gateway/.dev.vars
+gateway/wrangler.jsonc
+*.key
+*.sqlite*
+.env
+.DS_Store
+dist/

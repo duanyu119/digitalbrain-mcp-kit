@@ -1,0 +1,41 @@
+name: Verify deployment kit
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  integration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.22.0'
+          cache: npm
+      - run: npm ci --legacy-peer-deps --ignore-scripts --no-audit --no-fund
+      - run: npm run check && npm run fixture && npm test && npm run init
+      - name: Start lab container with synthetic data
+        run: DATA_PATH=./.local-data/fixture docker compose up --build -d --wait
+      - name: Real MCP transport, safety and export integrity
+        run: DATA_DIR=.local-data/fixture TEST_MUTATIONS=1 npm run validate
+      - name: Configure Cloudflare local gateway
+        run: |
+          node scripts/configure-local.mjs
+          npx wrangler d1 migrations apply DB --local --config gateway/wrangler.jsonc
+          node scripts/gateway-user.mjs add researcher
+          npm run gateway:dev > artifacts/gateway.log 2>&1 &
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent http://localhost:8794/health > /dev/null; then exit 0; fi
+            sleep 1
+          done
+          exit 1
+      - name: OAuth and gateway-to-lab round trip
+        run: DATA_DIR=.local-data/fixture node scripts/oauth-smoke.mjs
+      - name: Cloudflare bundle dry run
+        run: npx wrangler deploy --dry-run --config gateway/wrangler.jsonc --outdir artifacts/worker
+      - name: Stop container
+        if: always()
+        run: docker compose down

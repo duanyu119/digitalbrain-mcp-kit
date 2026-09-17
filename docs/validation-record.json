@@ -1,0 +1,244 @@
+{
+  "validation_date": "2026-09-17",
+  "reports": {
+    "node": {
+      "at": "2026-09-17T14:03:25.504Z",
+      "transport": "node-http",
+      "release": "website-sample-da350426b81939cd",
+      "datasets": 109,
+      "expression_rows": 648,
+      "source_value_comparisons": 2592,
+      "checks": [
+        "health",
+        "unauthenticated_rejected",
+        "foreign_origin_rejected",
+        "oversized_request_rejected",
+        "sdk_initialize_and_six_tools",
+        "dataset_search_all_pages",
+        "dataset_detail",
+        "region_profiles_and_scope",
+        "expression_all_pages_equal_local_bundle",
+        "independent_source_JSON_values_match",
+        "evidence_with_source_and_status",
+        "unsupported_expression_filters_rejected",
+        "empty_genes_rejected",
+        "unavailable_gene_not_fabricated",
+        "signed_export_download_sha256",
+        "tampered_export_rejected",
+        "expired_export_rejected",
+        "same_size_export_corruption_rejected",
+        "revocation_blocks_MCP_and_download"
+      ],
+      "passed": 19,
+      "scope": "Integration and value-fidelity checks only; not model accuracy, full atlas validation or a 100-user load test.",
+      "sources": [
+        {
+          "url": "https://digitalbrain-human.com/api/v1/catalog",
+          "file": "catalog.json",
+          "sha256": "5f3bc6fc550c753aaa6d1dc67acab3597ca745131ccb878cf4d197ca4467d8c2",
+          "bytes": 17435,
+          "retrieved_at": "2026-09-17T13:56:42.972Z",
+          "reused_cache": true
+        },
+        {
+          "url": "https://digitalbrain-human.com/api/v1/gene-data/index.json",
+          "file": "gene-index.json",
+          "sha256": "bbfa990c0dfe68416cc38b6c898820e309e4504e38452d259a240543cb740c1b",
+          "bytes": 698116,
+          "retrieved_at": "2026-09-17T13:57:02.204Z",
+          "reused_cache": true
+        },
+        {
+          "url": "https://digitalbrain-human.com/api/v1/overview?collection=Collection-19&dataset=All_neurons",
+          "file": "overview.json",
+          "sha256": "cba992137d12a57ce123e3daecb31bdeff221de411ae68dd7e908a7bb70739be",
+          "bytes": 116701,
+          "retrieved_at": "2026-09-17T13:57:18.252Z",
+          "reused_cache": true
+        },
+        {
+          "url": "https://digitalbrain-human.com/api/v1/gene-data/genes/ASIC2.json",
+          "file": "ASIC2.json",
+          "sha256": "6b8ce2e0dcab8998ce6475b04b7284bb6f1a39cf9ab0d49f5390a30d7bd470fd",
+          "bytes": 16725,
+          "retrieved_at": "2026-09-17T13:57:16.292Z",
+          "reused_cache": true
+        },
+        {
+          "url": "https://digitalbrain-human.com/api/v1/gene-data/genes/AKT2.json",
+          "file": "AKT2.json",
+          "sha256": "eb28d500c4b99ccdb2afa2256138861f8311a6367172e43f5e7714a620fdb2d2",
+          "bytes": 16971,
+          "retrieved_at": "2026-09-17T13:57:17.074Z",
+          "reused_cache": true
+        }
+      ]
+    },
+    "docker": {
+      "at": "2026-09-17T14:07:50.757Z",
+      "transport": "node-http",
+      "release": "website-sample-da350426b81939cd",
+      "datasets": 109,
+      "expression_rows": 648,
+      "source_value_comparisons": 2592,
+      "checks": [
+        "health",
+        "unauthenticated_rejected",
+        "foreign_origin_rejected",
+        "oversized_request_rejected",
+        "sdk_initialize_and_six_tools",
+        "dataset_search_all_pages",
+        "dataset_detail",
+        "region_profiles_and_scope",
+        "expression_all_pages_equal_local_bundle",
+        "independent_source_JSON_values_match",
+        "evidence_with_source_and_status",
+        "unsupported_expression_filters_rejected",
+        "empty_genes_rejected",
+        "unavailable_gene_not_fabricated",
+        "signed_export_download_sha256",
+        "tampered_export_rejected",
+        "expired_export_rejected",
+        "same_size_export_corruption_rejected",
+        "revocation_blocks_MCP_and_download"
+      ],
+      "passed": 19,
+      "scope": "Integration and value-fidelity checks only; not model accuracy, full atlas validation or a 100-user load test.",
+      "sources": [
+        {
+          "url": "https://digitalbrain-human.com/api/v1/catalog",
+          "file": "catalog.json",
+          "sha256": "5f3bc6fc550c753aaa6d1dc67acab3597ca745131ccb878cf4d197ca4467d8c2",
+          "bytes": 17435,
+          "retrieved_at": "2026-09-17T13:56:42.972Z",
+          "reused_cache": true
+        },
+        {
+          "url": "https://digitalbrain-human.com/api/v1/gene-data/index.json",
+          "file": "gene-index.json",
+          "sha256": "bbfa990c0dfe68416cc38b6c898820e309e4504e38452d259a240543cb740c1b",
+          "bytes": 698116,
+          "retrieved_at": "2026-09-17T13:57:02.204Z",
+          "reused_cache": true
+        },
+        {
+          "url": "https://digitalbrain-human.com/api/v1/overview?collection=Collection-19&dataset=All_neurons",
+          "file": "overview.json",
+          "sha256": "cba992137d12a57ce123e3daecb31bdeff221de411ae68dd7e908a7bb70739be",
+          "bytes": 116701,
+          "retrieved_at": "2026-09-17T13:57:18.252Z",
+          "reused_cache": true
+        },
+        {
+          "url": "https://digitalbrain-human.com/api/v1/gene-data/genes/ASIC2.json",
+          "file": "ASIC2.json",
+          "sha256": "6b8ce2e0dcab8998ce6475b04b7284bb6f1a39cf9ab0d49f5390a30d7bd470fd",
+          "bytes": 16725,
+          "retrieved_at": "2026-09-17T13:57:16.292Z",
+          "reused_cache": true
+        },
+        {
+          "url": "https://digitalbrain-human.com/api/v1/gene-data/genes/AKT2.json",
+          "file": "AKT2.json",
+          "sha256": "eb28d500c4b99ccdb2afa2256138861f8311a6367172e43f5e7714a620fdb2d2",
+          "bytes": 16971,
+          "retrieved_at": "2026-09-17T13:57:17.074Z",
+          "reused_cache": true
+        }
+      ]
+    },
+    "cloudflare_local_gateway": {
+      "at": "2026-09-17T14:03:50.182Z",
+      "transport": "cloudflare-local-gateway",
+      "release": "website-sample-da350426b81939cd",
+      "datasets": 109,
+      "expression_rows": 648,
+      "source_value_comparisons": 2592,
+      "checks": [
+        "health",
+        "unauthenticated_rejected",
+        "foreign_origin_rejected",
+        "oversized_request_rejected",
+        "sdk_initialize_and_six_tools",
+        "dataset_search_all_pages",
+        "dataset_detail",
+        "region_profiles_and_scope",
+        "expression_all_pages_equal_local_bundle",
+        "independent_source_JSON_values_match",
+        "evidence_with_source_and_status",
+        "unsupported_expression_filters_rejected",
+        "empty_genes_rejected",
+        "unavailable_gene_not_fabricated",
+        "signed_export_download_sha256",
+        "tampered_export_rejected",
+        "expired_export_rejected"
+      ],
+      "passed": 17,
+      "scope": "Integration and value-fidelity checks only; not model accuracy, full atlas validation or a 100-user load test.",
+      "sources": [
+        {
+          "url": "https://digitalbrain-human.com/api/v1/catalog",
+          "file": "catalog.json",
+          "sha256": "5f3bc6fc550c753aaa6d1dc67acab3597ca745131ccb878cf4d197ca4467d8c2",
+          "bytes": 17435,
+          "retrieved_at": "2026-09-17T13:56:42.972Z",
+          "reused_cache": true
+        },
+        {
+          "url": "https://digitalbrain-human.com/api/v1/gene-data/index.json",
+          "file": "gene-index.json",
+          "sha256": "bbfa990c0dfe68416cc38b6c898820e309e4504e38452d259a240543cb740c1b",
+          "bytes": 698116,
+          "retrieved_at": "2026-09-17T13:57:02.204Z",
+          "reused_cache": true
+        },
+        {
+          "url": "https://digitalbrain-human.com/api/v1/overview?collection=Collection-19&dataset=All_neurons",
+          "file": "overview.json",
+          "sha256": "cba992137d12a57ce123e3daecb31bdeff221de411ae68dd7e908a7bb70739be",
+          "bytes": 116701,
+          "retrieved_at": "2026-09-17T13:57:18.252Z",
+          "reused_cache": true
+        },
+        {
+          "url": "https://digitalbrain-human.com/api/v1/gene-data/genes/ASIC2.json",
+          "file": "ASIC2.json",
+          "sha256": "6b8ce2e0dcab8998ce6475b04b7284bb6f1a39cf9ab0d49f5390a30d7bd470fd",
+          "bytes": 16725,
+          "retrieved_at": "2026-09-17T13:57:16.292Z",
+          "reused_cache": true
+        },
+        {
+          "url": "https://digitalbrain-human.com/api/v1/gene-data/genes/AKT2.json",
+          "file": "AKT2.json",
+          "sha256": "eb28d500c4b99ccdb2afa2256138861f8311a6367172e43f5e7714a620fdb2d2",
+          "bytes": 16971,
+          "retrieved_at": "2026-09-17T13:57:17.074Z",
+          "reused_cache": true
+        }
+      ]
+    },
+    "oauth": {
+      "at": "2026-09-17T14:03:50.196Z",
+      "checks": [
+        "health",
+        "unauthenticated_rejected",
+        "foreign_origin_rejected",
+        "oversized_body_rejected",
+        "oauth_registration",
+        "wrong_resource_rejected",
+        "unregistered_redirect_rejected",
+        "oauth_consent",
+        "pkce_token_exchange",
+        "gateway_to_lab_six_tools_and_source_fidelity",
+        "refresh_token",
+        "authorization_code_replay_rejected"
+      ],
+      "passed": 12
+    }
+  },
+  "raw_data_published": false,
+  "full_atlas_validated": false,
+  "model_weights_tested": false,
+  "hundred_user_load_tested": false
+}

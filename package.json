@@ -1,0 +1,34 @@
+{
+  "name": "digitalbrain-mcp-kit",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "init": "node scripts/admin.mjs init",
+    "start": "node --experimental-strip-types src/server.ts",
+    "sample": "node --experimental-strip-types scripts/sample.ts",
+    "fixture": "node --experimental-strip-types scripts/fixture.ts",
+    "check": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "validate": "node --experimental-strip-types scripts/validate.ts",
+    "gateway:dev": "wrangler dev --config gateway/wrangler.jsonc --port 8794",
+    "gateway:deploy": "wrangler deploy --config gateway/wrangler.jsonc"
+  },
+  "dependencies": {
+    "@cloudflare/workers-oauth-provider": "0.10.3",
+    "@modelcontextprotocol/client": "2.0.0",
+    "@modelcontextprotocol/server": "2.0.0",
+    "agents": "0.23.0",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.3",
+    "typescript": "7.0.2",
+    "wrangler": "4.133.0"
+  },
+  "description": "Read-only DigitalBrain MCP with lab-local data and an optional Cloudflare OAuth gateway",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.16 <23"
+  }
+}

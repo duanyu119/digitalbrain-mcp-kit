@@ -1,0 +1,11 @@
+import {readFileSync,writeFileSync,existsSync} from 'node:fs';
+const file='gateway/wrangler.jsonc';
+if(existsSync(file)) throw Error('gateway/wrangler.jsonc already exists; refusing to overwrite.');
+const config=JSON.parse(readFileSync('gateway/wrangler.example.jsonc','utf8'));
+config.vars.PUBLIC_ORIGIN='http://localhost:8794';
+config.vars.LAB_ORIGIN=process.env.LAB_ORIGIN||'http://localhost:8787';
+config.d1_databases[0].database_id='00000000-0000-0000-0000-000000000000';
+config.kv_namespaces[0].id='00000000000000000000000000000000';
+writeFileSync(file,JSON.stringify(config,null,2)+'\n',{flag:'wx'});
+writeFileSync('gateway/.dev.vars','LAB_SERVICE_TOKEN='+readFileSync('.local-data/auth/gateway.key','utf8').trim()+'\n',{mode:0o600,flag:'wx'});
+console.log('Local-only gateway config created. Do not deploy it; use the example for production.');

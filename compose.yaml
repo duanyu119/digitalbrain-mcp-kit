@@ -1,0 +1,20 @@
+services:
+  lab:
+    build: .
+    image: digitalbrain-mcp-kit:local
+    user: "${LOCAL_UID:-1000}:${LOCAL_GID:-1000}"
+    ports:
+      - "127.0.0.1:${LOCAL_PORT:-8787}:8787"
+    environment:
+      PUBLIC_ORIGIN: "${PUBLIC_ORIGIN:-http://localhost:8787}"
+      DAILY_QUOTA: "${DAILY_QUOTA:-1000}"
+    volumes:
+      - "${DATA_PATH:-./.local-data/data}:/data:ro"
+      - "./.local-data/auth:/auth:ro"
+      - "./.local-data/state:/state"
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    restart: unless-stopped
+    mem_limit: 512m
+    cpus: 1
